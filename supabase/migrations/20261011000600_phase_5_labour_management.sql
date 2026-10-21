@@ -295,7 +295,8 @@ create table public.subcontractor_agreements (
   created_at timestamptz not null default now(),
   foreign key (organization_id, project_id) references public.projects(organization_id, id) on delete restrict,
   foreign key (organization_id, subcontractor_id) references public.subcontractors(organization_id, id) on delete restrict,
-  unique (organization_id, id)
+  unique (organization_id, id),
+  unique (organization_id, project_id, id)
 );
 
 create table public.subcontractor_work_records (
