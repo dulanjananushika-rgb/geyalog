@@ -1,0 +1,10 @@
+import { useState } from 'react';
+import { SafeAreaView,ScrollView,StyleSheet,Text } from 'react-native';
+import { router } from 'expo-router';
+import { useMutation,useQueryClient } from '@tanstack/react-query';
+import { Button,ErrorNote,Field,SectionTitle } from '@/components/ui';
+import { createMaterial } from '@/lib/materials';
+import { useOrganization } from '@/providers/organization-provider';
+import { colors,space } from '@/theme/tokens';
+export default function NewMaterial(){const {organization}=useOrganization();const cache=useQueryClient();const [name,setName]=useState(''),[category,setCategory]=useState(''),[unitName,setUnit]=useState(''),[itemCode,setCode]=useState(''),[description,setDescription]=useState('');const mutation=useMutation({mutationFn:()=>createMaterial(organization!.id,{name,category,unitName,itemCode,description}),onSuccess:async()=>{await cache.invalidateQueries({queryKey:['organization-scoped',organization?.id,'material-items']});router.replace('/(app)/materials');}});return <SafeAreaView style={styles.page}><ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled"><Text style={styles.eyebrow}>COMPANY CATALOGUE</Text><SectionTitle title="Add material"/><Field label="Material name" value={name} onChangeText={setName}/><Field label="Category" value={category} onChangeText={setCategory} placeholder="Cement, steel, electrical..."/><Field label="Unit" value={unitName} onChangeText={setUnit} placeholder="bag, kg, m, sq ft"/><Field label="Item code (optional)" value={itemCode} onChangeText={setCode}/><Field label="Description (optional)" value={description} onChangeText={setDescription} multiline/>{mutation.error?<ErrorNote>{mutation.error instanceof Error?mutation.error.message:'Material save una naha.'}</ErrorNote>:null}<Button title="Save material" loading={mutation.isPending} onPress={()=>mutation.mutate()}/></ScrollView></SafeAreaView>;}
+const styles=StyleSheet.create({page:{flex:1,backgroundColor:colors.canvas},content:{padding:space.lg,paddingBottom:40},eyebrow:{fontSize:10,letterSpacing:1.5,color:colors.green,fontWeight:'800',marginBottom:10}});
