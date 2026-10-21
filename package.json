@@ -11,7 +11,14 @@
     "typecheck": "tsc --noEmit",
     "lint": "expo lint",
     "test": "node --experimental-strip-types --test",
-    "test:supabase:local": "powershell -NoProfile -ExecutionPolicy Bypass -File tests/run-local-supabase.ps1"
+    "test:watch": "node --experimental-strip-types --test --watch",
+    "test:supabase:local": "powershell -NoProfile -ExecutionPolicy Bypass -File tests/run-local-supabase.ps1",
+    "db:start": "supabase start",
+    "db:stop": "supabase stop",
+    "db:status": "supabase status",
+    "db:reset": "supabase db reset",
+    "db:diff": "supabase db diff",
+    "db:studio": "supabase studio"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -39,6 +46,7 @@
     "@types/react": "~19.2.2",
     "eslint": "^9.0.0",
     "eslint-config-expo": "~57.0.2",
+    "supabase": "^2.121.0",
     "typescript": "~6.0.3"
   },
   "overrides": {
