@@ -18,6 +18,13 @@
     },
     "android": {
       "package": "lk.geyalog.app"
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "a8d1dc27-4d51-49aa-b10e-34463711e07c"
+      }
+    },
+    "owner": "dulanjan"
   }
 }

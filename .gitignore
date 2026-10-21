@@ -21,3 +21,7 @@ Thumbs.db
 
 expo-env.d.ts
 # @end expo-cli
+
+# Native folders for managed workflow
+/android/
+/ios/
