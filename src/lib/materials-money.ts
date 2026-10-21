@@ -1,4 +1,4 @@
-import { decimalToMinorUnits } from './finance-money';
+import { decimalToMinorUnits } from './finance-money.ts';
 
 const Q = 10_000n;
 const round = (n: bigint, d: bigint) => { if (d <= 0n) throw new Error('Quantity divisor must be positive.'); return (n + d / 2n) / d; };

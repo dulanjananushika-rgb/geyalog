@@ -1,4 +1,4 @@
-import { decimalToMinorUnits, parseLkrToMinorUnits } from './finance-money';
+import { decimalToMinorUnits, parseLkrToMinorUnits } from './finance-money.ts';
 
 const roundRatio = (numerator: bigint, denominator: bigint) => {
   if (denominator <= 0n) throw new Error('Rate divisor must be greater than zero.');
