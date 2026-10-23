@@ -1,3 +1,23 @@
+<div align="center">
+
+# ??? GeyaLog Mobile
+### Multi-Tenant Construction Management & P&L Analytics Platform
+
+[![Download Android APK](https://img.shields.io/badge/Download_APK-Android_Release-ff5a1f?style=for-the-badge&logo=android&logoColor=white)](https://expo.dev/artifacts/eas/gw5khY6mvLIb1851y4uwtwQaM6Y-lTEDRurqIf7DKtk.apk)
+[![React Native](https://img.shields.io/badge/React_Native-Expo_SDK_57-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactnative.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL_RLS-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
+[![EAS Build](https://img.shields.io/badge/EAS_Build-Cloud_CI%2FCD-000020?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev/accounts/dulanjan/projects/geyalog)
+
+<p align="center">
+  A multi-tenant mobile system for Sri Lankan building contractors: daily site diaries, labor attendance & wage tracking, procurement, and real-time Budget vs. Actual P&L analytics.
+</p>
+
+</div>
+
+---
+
+
 # GeyaLog · Mobile App
 
 Expo SDK 57 + React Native + TypeScript app for Sri Lankan construction contractors. Local source includes Phases 0–6; Phases 3–6 database migrations and security behavior still require a disposable local/staging Supabase verification run before use against production.
